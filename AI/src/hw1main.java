@@ -11,7 +11,7 @@ public class hw1main {
 
 
     public static void main(String[] args) {
-        System.out.println("fuck you kattis");
+        System.out.println("fuck you kattis, dont do this to me!");
         //createMockData();
         readData();
 
