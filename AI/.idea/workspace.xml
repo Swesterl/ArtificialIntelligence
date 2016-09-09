@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e9eb321-bf61-42ef-a56e-e4228211d442" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/AI/AIproject/hw1main.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hw1main.java" afterPath="$PROJECT_DIR$/src/hw1main.java" />
     </list>
     <ignored path="ArtificialIntelligence.iws" />
@@ -28,8 +27,8 @@
       <file leaf-file-name="hw1main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hw1main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+            <state relative-caret-position="816">
+              <caret line="126" column="1" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -487,8 +486,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hw1main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="96" column="37" selection-start-line="96" selection-start-column="37" selection-end-line="96" selection-end-column="37" />
+        <state relative-caret-position="816">
+          <caret line="126" column="1" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
           <folding />
         </state>
       </provider>
