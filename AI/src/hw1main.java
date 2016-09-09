@@ -15,6 +15,7 @@ public class hw1main {
         //createMockData();
         readData();
 
+        matrixMult(a, b);
     }
 
     public static void readData() {
@@ -69,6 +70,39 @@ public class hw1main {
         a = aTemp;
         b = bTemp;
         pi = piTemp;
+    }
+
+
+    public static void matrixMult(double[][] first, double[][] second) {
+        double[][] answer = new double[first.length][second[0].length];
+        System.out.print("matris multi!");
+        if(first[0].length==second.length)
+        {
+            for(int i=0;i<answer[0].length;i++)
+            {
+                for(int j=0;j<answer.length;j++)
+                {
+                    answer[j][i]=0;
+                    for(int k=0;k<first[0].length;k++){
+                        answer[j][i]=answer[j][i]+first[j][k]*second[k][i];
+                    }
+
+                }
+            }
+
+            for(int i = 0 ; i < answer.length ;  i++){
+                for(int j = 0 ; j < answer.length ;  j++){
+                    System.out.print(answer[i][j] + " ; ");
+                }
+                System.out.println();
+            }
+        }
+        else
+        {
+           System.out.print("fel dimensioner för matris multi!");
+        }
+
+
     }
 
 }
