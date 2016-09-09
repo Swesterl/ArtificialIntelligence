@@ -107,6 +107,7 @@ public class hw1main {
             double tempus = sc.nextDouble();
             obsTemp[i] = tempus;
         }
+        obs = obsTemp;
     }
 
     public static void createMockData() {
