@@ -93,7 +93,7 @@ public class hw1main {
             }
             return answer;
         } else {
-
+            System.out.print("fel dimensioner för matris multi!");
             return null;
 
         }
@@ -103,7 +103,6 @@ public class hw1main {
 
     public static double[][] ElementWiseMatrixMult(double[][] first, double[][] second) {
         double[][] answer = new double[first.length][first[0].length];
-        System.out.print("elemntwise multi!");
         if (first.length == second.length && first[0].length == second[0].length) {
             for (int i = 0; i < answer.length; i++) {
                 for (int j = 0; j < answer[0].length; j++) {
