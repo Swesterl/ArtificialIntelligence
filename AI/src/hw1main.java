@@ -14,10 +14,19 @@ public class hw1main {
         System.out.println("fuck you kattis, dont do this to me!");
         //createMockData();
         readData();
+        hmm1();
+        //matrixMult(a, b);
+        //ElementWiseMatrixMult(a, b);
 
-        matrixMult(a, b);
-        ElementWiseMatrixMult(a, b);
     }
+
+    public static void hmm1() {
+        double[][] currentState = matrixMult(pi, a);
+        double[][] currentProbableObservation = matrixMult(currentState, b);
+        printMatrix(currentProbableObservation);
+    }
+
+
 
     public static void readData() {
         Scanner sc = new Scanner(System.in);
@@ -31,7 +40,6 @@ public class hw1main {
             }
         }
         a = trans;
-        System.out.print(a);
         long rowB = sc.nextLong();
         long colB = sc.nextLong();
         double[][] emit = new double[(int) rowB][(int) colB];
@@ -42,7 +50,6 @@ public class hw1main {
             }
         }
         b = emit;
-        System.out.print(b);
         long rowPI = sc.nextLong();
         long colPI = sc.nextLong();
         double[][] initial = new double[(int) rowPI][(int) colPI];
@@ -51,7 +58,6 @@ public class hw1main {
             initial[0][i] = tempus;
         }
         pi = initial;
-        System.out.print(pi);
     }
 
     public static void createMockData() {
@@ -74,7 +80,7 @@ public class hw1main {
     }
 
 
-    public static void matrixMult(double[][] first, double[][] second) {
+    public static double[][] matrixMult(double[][] first, double[][] second) {
         double[][] answer = new double[first.length][second[0].length];
         System.out.print("matris multi!");
         if (first[0].length == second.length) {
@@ -87,16 +93,17 @@ public class hw1main {
 
                 }
             }
-            printMatrix(answer);
-
+            return answer;
         } else {
-            System.out.print("fel dimensioner för matris multi!");
+
+            return null;
+
         }
 
 
     }
 
-    public static void ElementWiseMatrixMult(double[][] first, double[][] second) {
+    public static double[][] ElementWiseMatrixMult(double[][] first, double[][] second) {
         double[][] answer = new double[first.length][first[0].length];
         System.out.print("elemntwise multi!");
         if (first.length == second.length && first[0].length == second[0].length) {
@@ -105,16 +112,24 @@ public class hw1main {
                     answer[i][j] = first[i][j] * second[i][j];
                 }
             }
-
-            printMatrix(answer);
-
+            return answer;
         } else {
             System.out.print("fel dimensioner för matris multi!");
+            return null;
         }
 
 
     }
 
+
+    public static void printMatrix(double[][] m) {
+        for (int i = 0; i < m.length; i++) {
+            for (int j = 0; j < m[0].length; j++) {
+                System.out.print(m[i][j] + " ; ");
+            }
+            System.out.println();
+        }
+    }
 
     public static void printMatrix(double[][] m) {
         for (int i = 0; i < m.length; i++) {
