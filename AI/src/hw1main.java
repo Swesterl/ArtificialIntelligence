@@ -11,7 +11,6 @@ public class hw1main {
 
 
     public static void main(String[] args) {
-        System.out.println("fuck you kattis, dont do this to me!");
         //createMockData();
         readData();
         hmm1();
@@ -23,7 +22,7 @@ public class hw1main {
     public static void hmm1() {
         double[][] currentState = matrixMult(pi, a);
         double[][] currentProbableObservation = matrixMult(currentState, b);
-        printMatrix(currentProbableObservation);
+        printMatrixForKattis(currentProbableObservation);
     }
 
 
@@ -82,7 +81,6 @@ public class hw1main {
 
     public static double[][] matrixMult(double[][] first, double[][] second) {
         double[][] answer = new double[first.length][second[0].length];
-        System.out.print("matris multi!");
         if (first[0].length == second.length) {
             for (int i = 0; i < answer[0].length; i++) {
                 for (int j = 0; j < answer.length; j++) {
@@ -131,12 +129,12 @@ public class hw1main {
         }
     }
 
-    public static void printMatrix(double[][] m) {
+    public static void printMatrixForKattis(double[][] m) {
+        System.out.print(m.length + " " + m[0].length + " ");
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length; j++) {
-                System.out.print(m[i][j] + " ; ");
+                System.out.print(m[i][j] + " ");
             }
-            System.out.println();
         }
     }
 }
