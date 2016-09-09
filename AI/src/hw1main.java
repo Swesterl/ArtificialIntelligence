@@ -7,7 +7,7 @@ public class hw1main {
 
     static double[][] a;
     static double[][] b;
-    static double[] pi;
+    static double[][] pi;
 
 
     public static void main(String[] args) {
@@ -45,10 +45,10 @@ public class hw1main {
         System.out.print(b);
         long rowPI = sc.nextLong();
         long colPI = sc.nextLong();
-        double[] initial = new double[(int) colPI];
+        double[][] initial = new double[(int) rowPI][(int) colPI];
         for (int i = 0; i < colPI; i++) {
             double tempus = sc.nextDouble();
-            initial[i] = tempus;
+            initial[0][i] = tempus;
         }
         pi = initial;
         System.out.print(pi);
@@ -67,7 +67,7 @@ public class hw1main {
                 {0, 1, 2, 3},
                 {0, 1, 2, 3}
         };
-        double[] piTemp = {0.2, 0.4, 0.4, 0.0};
+        double[][] piTemp = {{0.2, 0.4, 0.4, 0.0}};
         a = aTemp;
         b = bTemp;
         pi = piTemp;
