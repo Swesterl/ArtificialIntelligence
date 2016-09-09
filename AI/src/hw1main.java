@@ -8,12 +8,16 @@ public class hw1main {
     static double[][] a;
     static double[][] b;
     static double[][] pi;
-
+    static double[] obs;
 
     public static void main(String[] args) {
         //createMockData();
-        readData();
-        hmm1();
+        //readDataHMM1();
+        readDataHMM2();
+
+        hmm2();
+        //hmm1();
+
         //matrixMult(a, b);
         //ElementWiseMatrixMult(a, b);
 
@@ -25,9 +29,16 @@ public class hw1main {
         printMatrixForKattis(currentProbableObservation);
     }
 
+    public static void hmm2() {
+        printMatrix(a);
+        printMatrix(b);
+        printMatrix(pi);
+        printVector(obs);
+    }
 
 
-    public static void readData() {
+
+    public static void readDataHMM1() {
         Scanner sc = new Scanner(System.in);
         long rowA = sc.nextLong();
         long colA = sc.nextLong();
@@ -57,6 +68,45 @@ public class hw1main {
             initial[0][i] = tempus;
         }
         pi = initial;
+    }
+
+    public static void readDataHMM2() {
+        Scanner sc = new Scanner(System.in);
+        long rowA = sc.nextLong();
+        long colA = sc.nextLong();
+        double[][] trans = new double[(int) rowA][(int) colA];
+        for (int i = 0; i < rowA; i++) {
+            for (int j = 0; j < colA; j++) {
+                double tempus = sc.nextDouble();
+                trans[i][j] = tempus;
+            }
+        }
+        a = trans;
+        long rowB = sc.nextLong();
+        long colB = sc.nextLong();
+        double[][] emit = new double[(int) rowB][(int) colB];
+        for (int i = 0; i < rowB; i++) {
+            for (int j = 0; j < colB; j++) {
+                double tempus = sc.nextDouble();
+                emit[i][j] = tempus;
+            }
+        }
+        b = emit;
+        long rowPI = sc.nextLong();
+        long colPI = sc.nextLong();
+        double[][] initial = new double[(int) rowPI][(int) colPI];
+        for (int i = 0; i < colPI; i++) {
+            double tempus = sc.nextDouble();
+            initial[0][i] = tempus;
+        }
+        pi = initial;
+
+        long colObs = sc.nextLong();
+        double[] obsTemp = new double[(int) colObs];
+        for (int i = 0; i < colObs; i++) {
+            double tempus = sc.nextDouble();
+            obsTemp[i] = tempus;
+        }
     }
 
     public static void createMockData() {
@@ -117,9 +167,18 @@ public class hw1main {
 
 
     }
+    public static void printVector(double[] v) {
 
+        System.out.println("printing vector");
+        for (int i = 0; i < v.length; i++) {
+                System.out.print(v[i] + " ; ");
+        }
+        System.out.println();
+    }
 
     public static void printMatrix(double[][] m) {
+
+        System.out.println("printing matrix");
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length; j++) {
                 System.out.print(m[i][j] + " ; ");
