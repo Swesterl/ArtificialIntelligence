@@ -10,14 +10,19 @@ public class hw1main {
     static double[][] b;
     static double[][] pi;
     static double[] obs;
+    static double[][] delta;
+    static double[][] deltaIDX;
 
     public static void main(String[] args) {
         //createMockData();
         //readDataHMM1();
-        readDataHMM2();
-
-        hmm2();
         //hmm1();
+        //readDataHMM2();
+        //hmm2();
+
+        readDataHMM3();
+        hmm3();
+
 
         //matrixMult(a, b);
         //ElementWiseMatrixMult(a, b);
@@ -55,6 +60,33 @@ public class hw1main {
             evalSum += alpha[i][alpha[0].length-1];
         }
         System.out.println(evalSum);
+    }
+
+    public static void hmm3() {
+        delta = new double[a.length][obs.length];
+        deltaIDX = new double[a.length][obs.length];
+        printAllGiven();
+        //Initialize delta
+        for(int i = 0 ; i < a.length  ; i++) {
+            delta[i][0] = pi[0][i] * b[i][(int) obs[0]];
+            deltaIDX[i][0] = i;
+        }
+
+        printMatrix(delta);
+
+        for(int t = 1 ;  t < obs.length ; t++){
+            for(int i = 0 ;  i < a.length ; i++){
+                double[] list = new double[a.length];
+                for(int j = 0 ; j < a.length ; j++){
+                    list[j] = a[j][i]*delta[j][t-1]*b[i][(int)obs[t]];
+                }
+                delta[i][t] = findMaxVal(list);
+                deltaIDX[i][t] = findMaxIndex(list);
+            }
+        }
+        printMatrix(delta);
+        printMatrix(deltaIDX);
+
     }
 
     public static double[][] initAlpha(double[][] pi, double[][] b){
@@ -101,6 +133,46 @@ public class hw1main {
     }
 
     public static void readDataHMM2() {
+        Scanner sc = new Scanner(System.in);
+        long rowA = sc.nextLong();
+        long colA = sc.nextLong();
+        double[][] trans = new double[(int) rowA][(int) colA];
+        for (int i = 0; i < rowA; i++) {
+            for (int j = 0; j < colA; j++) {
+                double tempus = sc.nextDouble();
+                trans[i][j] = tempus;
+            }
+        }
+        a = trans;
+        long rowB = sc.nextLong();
+        long colB = sc.nextLong();
+        double[][] emit = new double[(int) rowB][(int) colB];
+        for (int i = 0; i < rowB; i++) {
+            for (int j = 0; j < colB; j++) {
+                double tempus = sc.nextDouble();
+                emit[i][j] = tempus;
+            }
+        }
+        b = emit;
+        long rowPI = sc.nextLong();
+        long colPI = sc.nextLong();
+        double[][] initial = new double[(int) rowPI][(int) colPI];
+        for (int i = 0; i < colPI; i++) {
+            double tempus = sc.nextDouble();
+            initial[0][i] = tempus;
+        }
+        pi = initial;
+
+        long colObs = sc.nextLong();
+        double[] obsTemp = new double[(int) colObs];
+        for (int i = 0; i < colObs; i++) {
+            double tempus = sc.nextDouble();
+            obsTemp[i] = tempus;
+        }
+        obs = obsTemp;
+    }
+
+    public static void readDataHMM3() {
         Scanner sc = new Scanner(System.in);
         long rowA = sc.nextLong();
         long colA = sc.nextLong();
@@ -198,6 +270,27 @@ public class hw1main {
 
 
     }
+
+    public static double findMaxVal(double[] list){
+        double max = list[0];
+        for(int i = 0 ; i < list.length ; i++){
+            if(list[i]>max){
+                max = list[i];
+            }
+        }
+        return max;
+    }
+
+    public static double findMaxIndex(double[] list){
+        double max = 0;
+        for(int i = 0 ; i < list.length ; i++){
+            if(list[i]>max){
+                max = i;
+            }
+        }
+        return max;
+    }
+
     public static void printVector(double[] v) {
 
         System.out.println("printing vector--------------------------------------------");
@@ -225,5 +318,16 @@ public class hw1main {
                 System.out.print(m[i][j] + " ");
             }
         }
+    }
+
+    public static void printAllGiven(){
+        System.out.println("A");
+        printMatrix(a);
+        System.out.println("B");
+        printMatrix(b);
+        System.out.println("pi");
+        printMatrix(pi);
+        System.out.println("obs");
+        printVector(obs);
     }
 }
