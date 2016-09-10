@@ -1,5 +1,6 @@
 package AIproject;
 
+//Code by Simon Westerlind & Johan Fredin Haslum
 
 import java.util.Scanner;
 
@@ -30,13 +31,42 @@ public class hw1main {
     }
 
     public static void hmm2() {
-        printMatrix(a);
-        printMatrix(b);
-        printMatrix(pi);
-        printVector(obs);
+
+        double[][] alpha0 = initAlpha(pi, b);
+        double[][] alpha = new double[b.length][obs.length];
+
+        for(int i = 0 ; i < alpha.length ; i++){
+            alpha[i][0] = alpha0[i][0];
+        }
+
+
+        //Starting iterative step
+        for(int t = 1 ; t < obs.length ; t++){
+            for(int i = 0 ; i < b.length ; i++){
+                for(int j = 0 ; j < b.length ; j++){
+                    alpha[i][t] = alpha[i][t] + alpha[j][t-1]*a[j][i];
+                }
+                alpha[i][t] = alpha[i][t]*b[i][(int)obs[t]];
+            }
+
+        }
+        double evalSum = 0;
+        for(int i  = 0 ; i < alpha.length ; i++){
+            evalSum += alpha[i][alpha[0].length-1];
+        }
+        System.out.println(evalSum);
     }
 
+    public static double[][] initAlpha(double[][] pi, double[][] b){
+        double[][] alphaNoll = new double[pi[0].length][1];
+        for(int i = 0 ; i < pi[0].length ;  i++){
+            //Elementsiwe mult on two vectors
+            alphaNoll[i][0] = pi[0][i]*b[i][(int)obs[0]];
+        }
 
+
+        return alphaNoll;
+    }
 
     public static void readDataHMM1() {
         Scanner sc = new Scanner(System.in);
@@ -170,7 +200,7 @@ public class hw1main {
     }
     public static void printVector(double[] v) {
 
-        System.out.println("printing vector");
+        System.out.println("printing vector--------------------------------------------");
         for (int i = 0; i < v.length; i++) {
                 System.out.print(v[i] + " ; ");
         }
@@ -179,7 +209,7 @@ public class hw1main {
 
     public static void printMatrix(double[][] m) {
 
-        System.out.println("printing matrix");
+        System.out.println("printing matrix------------------------------------");
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length; j++) {
                 System.out.print(m[i][j] + " ; ");
