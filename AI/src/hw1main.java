@@ -65,14 +65,15 @@ public class hw1main {
     public static void hmm3() {
         delta = new double[a.length][obs.length];
         deltaIDX = new double[a.length][obs.length];
-        printAllGiven();
         //Initialize delta
         for(int i = 0 ; i < a.length  ; i++) {
-            delta[i][0] = pi[0][i] * b[i][(int) obs[0]];
+            double pLoL = pi[0][i];
+            double obsLoL = b[i][(int) obs[0]];
+            delta[i][0] = pLoL * obsLoL;
             deltaIDX[i][0] = i;
         }
-
-        printMatrix(delta);
+        //System.out.println("Delta efter första raden");
+        //printMatrix(delta);
 
         for(int t = 1 ;  t < obs.length ; t++){
             for(int i = 0 ;  i < a.length ; i++){
@@ -84,8 +85,30 @@ public class hw1main {
                 deltaIDX[i][t] = findMaxIndex(list);
             }
         }
+        /*
+        System.out.println("Delta efter hela");
         printMatrix(delta);
+        System.out.println("DeltaIDX efter första raden");
         printMatrix(deltaIDX);
+        */
+        //Backtracking most likely states-steps
+        double[] mostLikelyState = new double[delta[0].length];
+        double maxIndex = 0;
+        for(int i = 1 ; i < a.length ; i++){
+            if(delta[(int)maxIndex][delta[0].length-1] < delta[i][delta[0].length-1]){
+                maxIndex = i;
+            }
+        }
+
+        mostLikelyState[mostLikelyState.length-1] = maxIndex;
+
+        for(int i  = delta[0].length-1 ; i > 0 ; i--){
+            mostLikelyState[i-1] = deltaIDX[(int)mostLikelyState[i]][i];
+        }
+
+        for(int i  = 0 ; i < mostLikelyState.length  ; i++){
+            System.out.print((int)mostLikelyState[i] + " ");
+        }
 
     }
 
@@ -284,7 +307,7 @@ public class hw1main {
     public static double findMaxIndex(double[] list){
         double max = 0;
         for(int i = 0 ; i < list.length ; i++){
-            if(list[i]>max){
+            if(list[i]>list[(int)max]){
                 max = i;
             }
         }
