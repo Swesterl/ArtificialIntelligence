@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e9eb321-bf61-42ef-a56e-e4228211d442" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hw1main.java" afterPath="$PROJECT_DIR$/src/hw1main.java" />
     </list>
     <ignored path="ArtificialIntelligence.iws" />
@@ -26,8 +27,8 @@
       <file leaf-file-name="hw1main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hw1main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+            <state relative-caret-position="18">
+              <caret line="177" column="41" selection-start-line="177" selection-start-column="41" selection-end-line="177" selection-end-column="41" />
               <folding>
                 <element signature="method#hmm1#0;class#hw1main#0" expanded="false" />
                 <element signature="method#hmm3#0;class#hw1main#0" expanded="false" />
@@ -43,8 +44,8 @@
                 <element signature="method#printMatrix#0;class#hw1main#0" expanded="false" />
                 <element signature="method#printMatrixForKattis#0;class#hw1main#0" expanded="false" />
                 <element signature="method#printAllGiven#0;class#hw1main#0" expanded="false" />
-                <marker date="1473506283993" expanded="false" signature="820:1572" ph="{...}" />
-                <marker date="1473506283993" expanded="false" signature="6089:7375" ph="{...}" />
+                <marker date="1473605777876" expanded="false" signature="820:1572" ph="{...}" />
+                <marker date="1473605777876" expanded="false" signature="11045:12331" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -480,7 +481,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/hw1main.java</url>
-          <line>307</line>
+          <line>454</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
@@ -513,8 +514,8 @@
             <element signature="method#printMatrix#0;class#hw1main#0" expanded="false" />
             <element signature="method#printMatrixForKattis#0;class#hw1main#0" expanded="false" />
             <element signature="method#printAllGiven#0;class#hw1main#0" expanded="false" />
-            <marker date="1473506283993" expanded="false" signature="820:1572" ph="{...}" />
-            <marker date="1473506283993" expanded="false" signature="6089:7375" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="820:1572" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="11045:12331" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -538,8 +539,8 @@
             <element signature="method#printMatrix#0;class#hw1main#0" expanded="false" />
             <element signature="method#printMatrixForKattis#0;class#hw1main#0" expanded="false" />
             <element signature="method#printAllGiven#0;class#hw1main#0" expanded="false" />
-            <marker date="1473506283993" expanded="false" signature="820:1572" ph="{...}" />
-            <marker date="1473506283993" expanded="false" signature="6089:7375" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="820:1572" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="11045:12331" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -563,8 +564,8 @@
             <element signature="method#printMatrix#0;class#hw1main#0" expanded="false" />
             <element signature="method#printMatrixForKattis#0;class#hw1main#0" expanded="false" />
             <element signature="method#printAllGiven#0;class#hw1main#0" expanded="false" />
-            <marker date="1473506283993" expanded="false" signature="820:1572" ph="{...}" />
-            <marker date="1473506283993" expanded="false" signature="6089:7375" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="820:1572" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="11045:12331" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -578,8 +579,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hw1main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+        <state relative-caret-position="18">
+          <caret line="177" column="41" selection-start-line="177" selection-start-column="41" selection-end-line="177" selection-end-column="41" />
           <folding>
             <element signature="method#hmm1#0;class#hw1main#0" expanded="false" />
             <element signature="method#hmm3#0;class#hw1main#0" expanded="false" />
@@ -595,8 +596,8 @@
             <element signature="method#printMatrix#0;class#hw1main#0" expanded="false" />
             <element signature="method#printMatrixForKattis#0;class#hw1main#0" expanded="false" />
             <element signature="method#printAllGiven#0;class#hw1main#0" expanded="false" />
-            <marker date="1473506283993" expanded="false" signature="820:1572" ph="{...}" />
-            <marker date="1473506283993" expanded="false" signature="6089:7375" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="820:1572" ph="{...}" />
+            <marker date="1473605777876" expanded="false" signature="11045:12331" ph="{...}" />
           </folding>
         </state>
       </provider>

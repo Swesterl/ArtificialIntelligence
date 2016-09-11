@@ -112,6 +112,153 @@ public class hw1main {
 
     }
 
+    public static void hmm4() {
+        int iters = 0;
+        int maxIters = 100;
+        double logProb = -1999;
+        double oldLogProb = -2000;
+
+        while (iters < maxIters && logProb > oldLogProb) {
+
+            oldLogProb = logProb;
+
+            //double[][] alpha0 = initAlphaNorm(pi, b);
+            double[][] alphaNoll = new double[pi[0].length][1];
+            double c = 0;
+            double[] cArray = new double[obs.length];
+            for(int i = 0 ; i < pi[0].length ;  i++){
+                //Elementsiwe mult on two vectors
+                alphaNoll[i][0] = pi[0][i]*b[i][(int)obs[0]];
+                c = c + pi[0][i]*b[i][(int)obs[0]];
+            }
+            c = 1/c;
+            cArray[0] = c;
+            for(int i = 0 ; i < pi[0].length ;  i++){
+                alphaNoll[i][0] = alphaNoll[i][0]*c;
+            }
+
+            double[][] alpha = new double[b.length][obs.length];
+
+
+            for(int i = 0 ; i < alpha.length ; i++){
+                alpha[i][0] = alphaNoll[i][0];
+            }
+
+
+            //Starting iterative step (beta)
+
+            for(int t = 1 ; t < obs.length; t++){
+                c = 0;
+                for(int i = 0 ; i < b.length ; i++){
+                    alpha[i][t] = 0;
+                    for(int j = 0 ; j < b.length ; j++){
+                        alpha[i][t] = alpha[i][t] + alpha[j][t-1]*a[j][i];
+                    }
+                    alpha[i][t] = alpha[i][t]*b[i][(int) obs[t]];
+                    c = c + alpha[i][t];
+                }
+                c = 1/c;
+                for (int i=0; i < b.length; i++){
+                    alpha[i][t] = alpha[i][t]*c;
+                }
+                cArray[t] = c;
+
+            }
+
+            //double[][] beta0 = new double[b.length][1];
+            double[][] beta = new double[b.length][obs.length];
+
+
+            for (int i=0; i < b.length; i++){
+                beta[i][obs.length-1] = c;
+            }
+
+
+            for (int t = obs.length - 2 ; t > -1 ; t--){ // ska det igentligen vara 0 eller -1?
+                for (int i=0; i < b.lengt; i++){
+                    beta[i][t] = 0;
+                    for(int j = 0 ; j < b.length ; j++){
+                        beta[i][t] = beta[i][t] + a[i][j]*b[j][(int) obs[t+1]]*beta[j][t+1];
+                    }
+                    beta[i][t] = beta[i][t]*cArray[t];
+                }
+            }
+
+            double[][][] diGamma = new double[obs.length][b.length][b.length];
+            double[][] gamma = new double[b.length][obs.length];
+
+
+            for (int t=0 ; t < obs.length-1 ; t++) {
+                double denom = 0;
+                for (int i = 0 ; i < b.length ; i++ ) {
+                    for (int j = 0 ; j < b.length ; j++ ) {
+                        denom = denom + alpha[i][t]*a[i][j]*b[j][(int) obs[t+1]]*beta[j][(int) obs[t+1]];
+                    }
+                }
+                for (int i = 0 ; i < b.length ; i++ ) {
+                    gamma[i][t] = 0;
+                    for (int j = 0 ; j < b.length ; j++ ) {
+                        diGamma[t][i][j] = (alpha[i][t]*a[i][j]*b[j][(int) obs[t+1]]*beta[j][t+1])/denom;
+                        gamma[i][t] = gamma[i][t] + diGamma[t][i][j];
+                    }
+                }
+            }
+
+
+            double denom = 0;
+
+            for (int i = 0; i < b.length ; i++) {
+                denom = denom + alpha[i][obs.length-1];
+            }
+            for (int i = 0; i < b.length ; i++) {
+                gamma[i][obs.length-1] = (alpha[i][obs.length-1])/denom;
+            }
+
+            for (int i = 0; i < pi[0].length ; i++) {
+                pi[0][i] = gamma[i][0];
+            }
+
+            for (int i = 0; i < b.length ; i++) {
+                for (int j = 0; j < b.length ; j++) {
+                    double numer = 0;
+                    denom = 0;
+                    for (int t = 0; t < obs.length - 1; t++){
+                        numer = numer + diGamma[t][i][j];
+                        denom = denom + gamma[i][t];
+                    }
+                    a[i][j] = numer/denom;
+                }
+            }
+
+            for (int i = 0; i < b.length ; i++) {
+                for (int j = 0; j < b[0].length ; j++) {
+                    double numer = 0;
+                    denom = 0;
+                    for (int t = 0; t < obs.length; t++){
+                        if (((int) obs[t]) == j){
+                            numer = numer + gamma[i][t];
+                        }
+                        denom = denom + gamma[i][t];
+                    }
+                    b[i][j] = numer/denom;
+                }
+            }
+
+            logProb = 0;
+            for (int t = 0 ; t < obs.length ; t++){
+                logProb = logProb + Math.log((double) cArray[t]);
+            }
+            logProb = -logProb;
+
+            iters = iters + 1;
+
+        }
+
+        printMatrixForKattis(a);
+        System.out.print("\n");
+        printMatrixForKattis(b);
+    }
+
     public static double[][] initAlpha(double[][] pi, double[][] b){
         double[][] alphaNoll = new double[pi[0].length][1];
         for(int i = 0 ; i < pi[0].length ;  i++){
