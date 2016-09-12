@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e9eb321-bf61-42ef-a56e-e4228211d442" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AI/AIproject/hw1main.class" afterPath="$PROJECT_DIR$/out/production/AI/AIproject/hw1main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DuckHunt/src/GameServer.class" afterPath="$PROJECT_DIR$/../DuckHunt/src/GameServer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DuckHunt/src/Player.class" afterPath="$PROJECT_DIR$/../DuckHunt/src/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DuckHunt/src/player2server" afterPath="$PROJECT_DIR$/../DuckHunt/src/player2server" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hw1main.java" afterPath="$PROJECT_DIR$/src/hw1main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DuckHunt/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../DuckHunt/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DuckHunt/src/GameServer.java" afterPath="$PROJECT_DIR$/../DuckHunt/src/GameServer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DuckHunt/src/Player.java" afterPath="$PROJECT_DIR$/../DuckHunt/src/Player.java" />
     </list>
     <ignored path="ArtificialIntelligence.iws" />

@@ -135,6 +135,7 @@ class GameServer
             for (int b = 0; b < lNumBirds; ++b)
             {
                 // Set species
+                //Här kan man fuska tror jag ^^
                 mBirdSpecies[b] = mEnvironment[r][b].mSpecies;
 
                 // Add the first observation
@@ -235,14 +236,14 @@ class GameServer
         {
             if ((lString = pPlayer.mInputStream.readLine()) == null)
             {
-                System.err.println("getline failed for player " + pPlayer.mID);
+                System.err.println("getline failed in try for player " + pPlayer.mID);
                 pPlayer.mGameOver = true;
                 return;
             }
         }
         catch (IOException e)
         {
-            System.err.println("getline failed for player " + pPlayer.mID);
+            System.err.println("getline failed in catch for player " + pPlayer.mID);
             pPlayer.mGameOver = true;
             return;
         }
