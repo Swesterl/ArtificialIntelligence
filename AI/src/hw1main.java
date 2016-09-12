@@ -294,16 +294,16 @@ public class hw1main {
 
         while (iters < maxIters) {
             oldLogProb = logProb;
-            System.out.println(logProb);
+            //System.out.println(logProb);
             alphaForward();
             betaBackwards();
             gammaMerge();
             reEstimateing();
             logChange();
             iters = iters + 1;
-            System.out.println(logProb);
+            //System.out.println(logProb);
         }
-        System.out.println(iters);
+        //System.out.println(iters);
         printMatrixForKattis(a);
         System.out.print("\n");
         printMatrixForKattis(b);
