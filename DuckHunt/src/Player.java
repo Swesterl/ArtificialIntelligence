@@ -1,4 +1,9 @@
 
+import javafx.util.Pair;
+
+import java.util.LinkedList;
+import java.util.List;
+
 class Player {
     static double[][] a;
     static double[][] b;
@@ -109,23 +114,23 @@ class Player {
     public static final Action cDontShoot = new Action(-1, -1);
 
 
-
-    public static void alphaForward() {
+    //TODO Denna kan needa en cArray!
+    public static double[][] alphaForward(double[][] alphaTemp, double[][] alphaNollTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
 
         c = 0;
 
         for(int i = 0 ; i < N ;  i++){
-            alphaNoll[i][0] = pi[0][i]*b[i][(int) obs[0]];
-            c = c + alphaNoll[i][0];
+            alphaNollTemp[i][0] = piTemp[0][i]*bTemp[i][(int) obs[0]];
+            c = c + alphaNollTemp[i][0];
         }
         c = 1/c;
         cArray[0] = c;
         for(int i = 0 ; i < N ;  i++){
-            alphaNoll[i][0] = alphaNoll[i][0]*c;
+            alphaNollTemp[i][0] = alphaNollTemp[i][0]*c;
         }
 
         for(int i = 0 ; i < N ; i++){
-            alpha[i][0] = alphaNoll[i][0];
+            alphaTemp[i][0] = alphaNollTemp[i][0];
         }
 
 
@@ -134,48 +139,53 @@ class Player {
         for(int t = 1 ; t < T; t++){
             c = 0;
             for(int i = 0 ; i < N ; i++){
-                alpha[i][t] = 0;
-                for(int j = 0 ; j < b.length ; j++){
-                    alpha[i][t] = alpha[i][t] + alpha[j][t-1]*a[j][i];
+                alphaTemp[i][t] = 0;
+                for(int j = 0 ; j < bTemp.length ; j++){
+                    alphaTemp[i][t] = alphaTemp[i][t] + alphaTemp[j][t-1]*aTemp[j][i];
                 }
-                alpha[i][t] = alpha[i][t]*b[i][(int) obs[t]];
-                c = c + alpha[i][t];
+                alphaTemp[i][t] = alphaTemp[i][t]*bTemp[i][(int) obsTemp[t]];
+                c = c + alphaTemp[i][t];
             }
             c = 1/c;
             for (int i=0; i < N; i++){
-                alpha[i][t] = alpha[i][t]*c;
+                alphaTemp[i][t] = alphaTemp[i][t]*c;
             }
             cArray[t] = c;
 
         }
 
-
+        return alphaTemp;
 
     }
 
-    public static void betaBackwards() {
+    //TODO Denna kan needa en cArray också!
+    public static double[][] betaBackwards(double[][] betaTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
 
         for (int i=0; i < N; i++){
-            beta[i][T-1] = c;
+            betaTemp[i][T-1] = c;
         }
 
 
         for (int t = T - 2 ; t >= 0 ; t--){ // ska det igentligen vara 0 eller -1?
             for (int i=0; i < N; i++){
-                beta[i][t] = 0;
+                betaTemp[i][t] = 0;
                 for(int j = 0 ; j < N ; j++){
-                    beta[i][t] = beta[i][t] + a[i][j]*b[j][(int) obs[t+1]]*beta[j][t+1];
+                    betaTemp[i][t] = betaTemp[i][t] + aTemp[i][j]*bTemp[j][(int) obsTemp[t+1]]*betaTemp[j][t+1];
                 }
-                beta[i][t] = beta[i][t]*cArray[t];
+                betaTemp[i][t] = betaTemp[i][t]*cArray[t];
             }
         }
+
+        return betaTemp;
     }
 
-    public static void gammaMerge() {
+    //Den borde inte needa en denom eftersom den nollställs direkt
+    //Pair borde funka!
+    public static List gammaMerge(double[][] gammaTemp, double[][][] diGammaTemp, double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
 
         double evalSum = 0;
         for(int i  = 0 ; i < N ; i++){
-            evalSum += alpha[i][T-1];
+            evalSum += alphaTemp[i][T-1];
         }
 
 
@@ -183,31 +193,40 @@ class Player {
             denom = 0;
             for (int i = 0 ; i < N ; i++ ) {
                 for (int j = 0 ; j < N ; j++ ) {
-                    denom = denom + alpha[i][t]*a[i][j]*b[j][(int) obs[t+1]]*beta[j][(int) obs[t+1]];
+                    denom = denom + alphaTemp[i][t]*a[i][j]*b[j][(int) obsTemp[t+1]]*betaTemp[j][(int) obsTemp[t+1]];
                 }
             }
             for (int i = 0 ; i < N ; i++ ) {
-                gamma[i][t] = 0;
+                gammaTemp[i][t] = 0;
                 for (int j = 0 ; j < N ; j++ ) {
-                    diGamma[i][j][t] = (alpha[i][t]*a[i][j]*b[j][(int) obs[t+1]]*beta[j][t+1])/evalSum;//denom;
-                    gamma[i][t] = gamma[i][t] + diGamma[i][j][t];
+                    diGammaTemp[i][j][t] = (alphaTemp[i][t]*aTemp[i][j]*bTemp[j][(int) obsTemp[t+1]]*betaTemp[j][t+1])/evalSum;//denom;
+                    gammaTemp[i][t] = gammaTemp[i][t] + diGammaTemp[i][j][t];
                 }
             }
         }
 
         denom = 0;
         for (int i = 0; i < N ; i++) {
-            denom = denom + alpha[i][T-1];
+            denom = denom + alphaTemp[i][T-1];
         }
         for (int i = 0; i < N ; i++) {
-            gamma[i][T-1] = (alpha[i][T-1])/denom;
+            gammaTemp[i][T-1] = (alphaTemp[i][T-1])/denom;
         }
+
+
+        Pair gammaAndDiGamma = new Pair(gammaTemp, diGammaTemp);
+        List gDg = new LinkedList();
+        gDg.add(gammaTemp);
+        gDg.add(diGammaTemp);
+        return gDg;
+
     }
 
-    public static void reEstimateing() {
+    //TODO Alla N kan behöva bli specifika N!
+    public static LinkedList reEstimateing(double[][] gammaTemp, double[][][] diGammaTemp, double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
 
         for (int i = 0; i < N ; i++) {
-            pi[0][i] = gamma[i][0];
+            piTemp[0][i] = gammaTemp[i][0];
         }
 
         for (int i = 0; i < N ; i++) {
@@ -215,10 +234,10 @@ class Player {
                 numer = 0;
                 denom = 0;
                 for (int t = 0; t < T - 1; t++){
-                    numer = numer + diGamma[i][j][t];
-                    denom = denom + gamma[i][t];
+                    numer = numer + diGammaTemp[i][j][t];
+                    denom = denom + gammaTemp[i][t];
                 }
-                a[i][j] = numer/denom;
+                aTemp[i][j] = numer/denom;
             }
         }
 
@@ -227,14 +246,20 @@ class Player {
                 numer = 0;
                 denom = 0;
                 for (int t = 0 ; t < T - 1; t++){
-                    if (((int) obs[t]) == j){
-                        numer = numer + gamma[i][t];
+                    if (((int) obsTemp[t]) == j){
+                        numer = numer + gammaTemp[i][t];
                     }
-                    denom = denom + gamma[i][t];
+                    denom = denom + gammaTemp[i][t];
                 }
-                b[i][j] = numer/denom;
+                bTemp[i][j] = numer/denom;
             }
         }
+
+        List reestimatedLambda = new LinkedList();
+        reestimatedLambda.add(aTemp);
+        reestimatedLambda.add(bTemp);
+        reestimatedLambda.add(piTemp);
+        return reestimatedLambda;
     }
 
     public static void logChange() {
