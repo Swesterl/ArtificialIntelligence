@@ -25,11 +25,9 @@ class Player {
     static double[][] alpha;
     static double numer;
     static double denom;
-    static int N;
-    static int M;
-    static int T;
 
-    static int roundInRound;
+
+    static int timestep;
 
 
     public Player() {
@@ -61,8 +59,8 @@ class Player {
         System.err.println("Ey, bruhasda vi är i round: " +  pState.getRound() +  " ");
         System.err.println("Ey, bruh vi har bird nummer 1 som är dead: " +  pState.getBird(1).isAlive() +  "");
         System.err.println("Ey, bruh vi har: " +  pState.getNumNewTurns() +  " st NewTurns");
-        System.err.println("Ey, bruh vi har roundinorund: " +  roundInRound +  " ");
-        roundInRound++;
+        System.err.println("Ey, bruh vi är på timestep: " +  timestep +  " ");
+        timestep++;
         return cDontShoot;
 
         // This line would predict that bird 0 will move right and shoot at it.
@@ -121,7 +119,9 @@ class Player {
 
     //TODO Denna kan needa en cArray!
     public static List alphaForward(double[][] alphaTemp, double[][] alphaNollTemp, double[] cArrayTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
-
+        int N = aTemp.length;
+        int T = obsTemp.length;
+        int M = bTemp[0].length;
         c = 0;
 
         for(int i = 0 ; i < N ;  i++){
@@ -166,7 +166,9 @@ class Player {
     }
 
     public static double[][] betaBackwards(double[][] betaTemp, double[] cArrayTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
-
+        int N = aTemp.length;
+        int T = obsTemp.length;
+        int M = bTemp[0].length;
         for (int i=0; i < N; i++){
             betaTemp[i][T-1] = c;
         }
@@ -188,6 +190,8 @@ class Player {
     //Den borde inte needa en denom eftersom den nollställs direkt
     //TODO borde cArray returnas? Nej?
     public static List gammaMerge(double[][] gammaTemp, double[][][] diGammaTemp, double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
+        int N = aTemp.length;
+        int T = obsTemp.length;
 
         double evalSum = 0;
         for(int i  = 0 ; i < N ; i++){
@@ -230,7 +234,9 @@ class Player {
 
     //TODO Alla N kan behöva bli specifika N!
     public static List reEstimateing(double[][] gammaTemp, double[][][] diGammaTemp, double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
-
+        int N = aTemp.length;
+        int T = obsTemp.length;
+        int M = bTemp[0].length;
         for (int i = 0; i < N ; i++) {
             piTemp[0][i] = gammaTemp[i][0];
         }
@@ -268,7 +274,8 @@ class Player {
         return reestimatedLambda;
     }
     //TODO Vi needar cArray
-    public static double logChange(double logProbTemp, double[] cArrayTemp) {
+    public static double logChange(double logProbTemp, double[] cArrayTemp, double[][] obsTemp) {
+        int T = obsTemp.length;
         logProbTemp = 0;
         for (int t = 0 ; t < T ; t++){
             logProbTemp = logProbTemp + Math.log(1/((double) cArrayTemp[t]));

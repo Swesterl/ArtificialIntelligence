@@ -135,7 +135,6 @@ class GameServer
             for (int b = 0; b < lNumBirds; ++b)
             {
                 // Set species
-                //Här kan man fuska tror jag ^^
                 mBirdSpecies[b] = mEnvironment[r][b].mSpecies;
 
                 // Add the first observation

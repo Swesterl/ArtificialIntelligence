@@ -34,22 +34,28 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4429">
-              <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
+            <state relative-caret-position="-1064">
+              <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#Player#0;class#Player#0" expanded="false" />
-                <element signature="e#2127#2198#0" expanded="false" />
+                <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
+                <element signature="e#2060#2131#0" expanded="false" />
+                <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
+                <element signature="method#guess#0;class#Player#0" expanded="false" />
+                <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
                 <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
                 <element signature="method#reveal#0;class#Player#0" expanded="false" />
+                <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
+                <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
+                <element signature="method#reEstimateing#0;class#Player#0" expanded="false" />
                 <element signature="method#logChange#0;class#Player#0" expanded="false" />
-                <element signature="e#10157#10206#0" expanded="false" />
+                <element signature="method#viterbi#0;class#Player#0" expanded="false" />
+                <element signature="e#10486#10535#0" expanded="false" />
                 <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
                 <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
                 <element signature="method#printVector#0;class#Player#0" expanded="false" />
                 <element signature="method#printMatrix#0;class#Player#0" expanded="false" />
                 <element signature="method#printMatrixForKattis#0;class#Player#0" expanded="false" />
-                <element signature="method#printAllGiven#0;class#Player#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -476,12 +482,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>327</line>
+          <line>334</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Player.java</url>
+          <line>289</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Player.java</url>
+          <line>383</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Player.java</url>
+          <line>382</line>
+          <properties class="Player" method="printAllGiven" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -503,19 +527,25 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#Player#0;class#Player#0" expanded="false" />
-            <element signature="e#2127#2198#0" expanded="false" />
+            <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
+            <element signature="e#2060#2131#0" expanded="false" />
+            <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
+            <element signature="method#guess#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
             <element signature="method#reveal#0;class#Player#0" expanded="false" />
+            <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
+            <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
+            <element signature="method#reEstimateing#0;class#Player#0" expanded="false" />
             <element signature="method#logChange#0;class#Player#0" expanded="false" />
-            <element signature="e#10157#10206#0" expanded="false" />
+            <element signature="method#viterbi#0;class#Player#0" expanded="false" />
+            <element signature="e#10486#10535#0" expanded="false" />
             <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
             <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
             <element signature="method#printVector#0;class#Player#0" expanded="false" />
             <element signature="method#printMatrix#0;class#Player#0" expanded="false" />
             <element signature="method#printMatrixForKattis#0;class#Player#0" expanded="false" />
-            <element signature="method#printAllGiven#0;class#Player#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -592,14 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="137" column="35" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -608,24 +630,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4158">
+          <caret line="237" column="57" selection-start-line="237" selection-start-column="57" selection-end-line="237" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4429">
-          <caret line="326" column="0" selection-start-line="326" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
+        <state relative-caret-position="-1064">
+          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#Player#0;class#Player#0" expanded="false" />
-            <element signature="e#2127#2198#0" expanded="false" />
+            <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
+            <element signature="e#2060#2131#0" expanded="false" />
+            <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
+            <element signature="method#guess#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
             <element signature="method#reveal#0;class#Player#0" expanded="false" />
+            <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
+            <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
+            <element signature="method#reEstimateing#0;class#Player#0" expanded="false" />
             <element signature="method#logChange#0;class#Player#0" expanded="false" />
-            <element signature="e#10157#10206#0" expanded="false" />
+            <element signature="method#viterbi#0;class#Player#0" expanded="false" />
+            <element signature="e#10486#10535#0" expanded="false" />
             <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
             <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
             <element signature="method#printVector#0;class#Player#0" expanded="false" />
             <element signature="method#printMatrix#0;class#Player#0" expanded="false" />
             <element signature="method#printMatrixForKattis#0;class#Player#0" expanded="false" />
-            <element signature="method#printAllGiven#0;class#Player#0" expanded="false" />
           </folding>
         </state>
       </provider>
