@@ -34,23 +34,23 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1064">
-              <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+            <state relative-caret-position="-240">
+              <caret line="196" column="74" selection-start-line="196" selection-start-column="65" selection-end-line="196" selection-end-column="74" />
               <folding>
                 <element signature="method#Player#0;class#Player#0" expanded="false" />
                 <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
-                <element signature="e#2060#2131#0" expanded="false" />
+                <element signature="e#7441#7512#0" expanded="false" />
                 <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
                 <element signature="method#guess#0;class#Player#0" expanded="false" />
                 <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
                 <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
                 <element signature="method#reveal#0;class#Player#0" expanded="false" />
+                <element signature="method#alphaForward#0;class#Player#0" expanded="false" />
                 <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
                 <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
-                <element signature="method#reEstimateing#0;class#Player#0" expanded="false" />
                 <element signature="method#logChange#0;class#Player#0" expanded="false" />
                 <element signature="method#viterbi#0;class#Player#0" expanded="false" />
-                <element signature="e#10486#10535#0" expanded="false" />
+                <element signature="e#15639#15688#0" expanded="false" />
                 <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
                 <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
                 <element signature="method#printVector#0;class#Player#0" expanded="false" />
@@ -147,7 +147,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../AI/src" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -477,35 +477,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>124</line>
+          <line>286</line>
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>334</line>
+          <line>493</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>289</line>
+          <line>291</line>
           <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>383</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>382</line>
-          <properties class="Player" method="printAllGiven" />
-          <option name="timeStamp" value="7" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -529,18 +517,18 @@
           <folding>
             <element signature="method#Player#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
-            <element signature="e#2060#2131#0" expanded="false" />
+            <element signature="e#7441#7512#0" expanded="false" />
             <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
             <element signature="method#guess#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
             <element signature="method#reveal#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaForward#0;class#Player#0" expanded="false" />
             <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
             <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
-            <element signature="method#reEstimateing#0;class#Player#0" expanded="false" />
             <element signature="method#logChange#0;class#Player#0" expanded="false" />
             <element signature="method#viterbi#0;class#Player#0" expanded="false" />
-            <element signature="e#10486#10535#0" expanded="false" />
+            <element signature="e#15639#15688#0" expanded="false" />
             <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
             <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
             <element signature="method#printVector#0;class#Player#0" expanded="false" />
@@ -640,23 +628,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1064">
-          <caret line="67" column="5" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+        <state relative-caret-position="-240">
+          <caret line="196" column="74" selection-start-line="196" selection-start-column="65" selection-end-line="196" selection-end-column="74" />
           <folding>
             <element signature="method#Player#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
-            <element signature="e#2060#2131#0" expanded="false" />
+            <element signature="e#7441#7512#0" expanded="false" />
             <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
             <element signature="method#guess#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
             <element signature="method#reveal#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaForward#0;class#Player#0" expanded="false" />
             <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
             <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
-            <element signature="method#reEstimateing#0;class#Player#0" expanded="false" />
             <element signature="method#logChange#0;class#Player#0" expanded="false" />
             <element signature="method#viterbi#0;class#Player#0" expanded="false" />
-            <element signature="e#10486#10535#0" expanded="false" />
+            <element signature="e#15639#15688#0" expanded="false" />
             <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
             <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
             <element signature="method#printVector#0;class#Player#0" expanded="false" />

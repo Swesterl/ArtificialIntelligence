@@ -1,16 +1,60 @@
 
 import javafx.util.Pair;
-
+import java.lang.Math;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
+import java.util.AbstractMap.SimpleEntry;
 
 class Player {
-    static double[][] a;
-    static double[][] b;
-    static double[][] pi;
-    static double[] obs;
     static double[][] delta;
     static double[][] deltaIDX;
+
+
+    static double[][] aRM;
+    static double[][] bRM;
+    static double[][] piRM;
+    static double[] obsRM;
+    static double[][] deltaRM;
+    static double[][] deltaIDXRM;
+    static double logProbRM;
+    static double oldLogProbRM;
+    static double[][] alphaNollRM;
+    static double[] cArrayRM;
+    static double[][] betaRM;
+    static double[][][] diGammaRM;
+    static double[][] gammaRM;
+    static double[][] alphaRM;
+
+    static double[][] aMR;
+    static double[][] bMR;
+    static double[][] piMR;
+    static double[][] deltaMR;
+    static double[][] deltaIDXMR;
+    static double logProbMR;
+    static double oldLogProbMR;
+    static double[][] alphaNollMR;
+    static double[][] betaMR;
+    static double[][][] diGammaMR;
+    static double[][] gammaMR;
+    static double[][] alphaMR;
+
+
+    static double[][] aFM;
+    static double[][] bFM;
+    static double[][] piFM;
+    static double[] obsFM;
+    static double[][] deltaFM;
+    static double[][] deltaIDXFM;
+    static double logProbFM;
+    static double oldLogProbFM;
+    static double[][] alphaNollFM;
+    static double[] cArrayFM;
+    static double[][] betaFM;
+    static double[][][] diGammaFM;
+    static double[][] gammaFM;
+    static double[][] alphaFM;
+
     //
     static int iters;
     static int maxIters;
@@ -26,11 +70,59 @@ class Player {
     static double numer;
     static double denom;
 
+    static int nrOfModels = 5;
+    static int nrOfRorelser = 9;
+
 
     static int timestep;
 
 
     public Player() {
+        Random r = new Random();
+        double sumThisRow = 0;
+
+
+        aMR = new double[nrOfModels][nrOfModels];
+        bMR = new double[nrOfModels][nrOfRorelser];
+        piMR = new double[1][nrOfModels];
+        //Give aMR random values
+        for(int i = 0 ; i < aMR.length ; i++) {
+            for (int j = 0; j < aMR[0].length; j++) {
+                double randNr = r.nextDouble();
+                aMR[i][j] = randNr;
+                sumThisRow += randNr;
+            }
+            for (int k = 0; k < aMR[0].length; k++) {
+                aMR[i][k] /= sumThisRow;
+            }
+            sumThisRow = 0;
+        }
+
+        //Give bMR random values.
+        for(int i = 0 ; i < bMR.length ; i++) {
+            for (int j = 0; j < bMR[0].length; j++) {
+                double randNr = r.nextDouble();
+                bMR[i][j] = randNr;
+                sumThisRow += randNr;
+            }
+            for (int k = 0; k < bMR[0].length; k++) {
+                bMR[i][k] /= sumThisRow;
+            }
+            sumThisRow = 0;
+        }
+        //Give piMR random values.
+        for(int i = 0 ; i < piMR.length ; i++) {
+            for (int j = 0; j < piMR[0].length; j++) {
+                double randNr = r.nextDouble();
+                piMR[i][j] = randNr;
+                sumThisRow += randNr;
+            }
+            for (int k = 0; k < piMR[0].length; k++) {
+                piMR[i][k] /= sumThisRow;
+            }
+            sumThisRow = 0;
+        }
+
     }
 
     /**
@@ -54,13 +146,83 @@ class Player {
          * This skeleton never shoots.
          */
 
-        // This line chooses not to shoot.
-        System.err.println("Ey, bruhasda vi har: " +  pState.getNumBirds() +  " st birds");
-        System.err.println("Ey, bruhasda vi är i round: " +  pState.getRound() +  " ");
-        System.err.println("Ey, bruh vi har bird nummer 1 som är dead: " +  pState.getBird(1).isAlive() +  "");
-        System.err.println("Ey, bruh vi har: " +  pState.getNumNewTurns() +  " st NewTurns");
-        System.err.println("Ey, bruh vi är på timestep: " +  timestep +  " ");
+        if(pState.getRound() == 0){
+            if(timestep == 97){
+                for(int i = 0 ; i < pState.getNumBirds() ; i++){
+                    double[] obsMR = new double[pState.getBird(i).getSeqLength()];
+
+                    double[] cArrayMR = new double[obsMR.length];
+
+
+
+                    for(int j = 0 ; j < pState.getBird(i).getSeqLength() ; j++){
+                        obsMR[j] = pState.getBird(i).getObservation(j);
+                    }
+
+
+                    int maxIters = 400;
+                    iters = 0;
+                    double oldLogProbMR = 10000000;
+
+                    SimpleEntry<double[], double[][]> cArrayAlpha = alphaForward(cArrayMR, aMR, bMR, piMR, obsMR);
+                    cArrayMR = cArrayAlpha.getKey();
+                    alphaMR = cArrayAlpha.getValue();
+
+                    betaMR = betaBackwards(cArrayMR, aMR, bMR, piMR, obsMR);
+
+                    SimpleEntry<double[][], double[][][]> gammaValues = gammaMerge(aMR, bMR, alphaMR, betaMR, piMR, obsMR);
+                    gammaMR = gammaValues.getKey();
+                    diGammaMR = gammaValues.getValue();
+
+                    SimpleEntry<double[][], SimpleEntry<double[][], double[][]>> improvedLambdas = reEstimateing(gammaMR, diGammaMR, aMR, bMR, alphaMR, betaMR, piMR, obsMR);
+                    piMR = improvedLambdas.getKey();
+                    SimpleEntry<double[][], double[][]> improvedAAndB = improvedLambdas.getValue();
+                    aMR = improvedAAndB.getKey();
+                    bMR = improvedAAndB.getValue();
+                    logProbMR = logChange(logProbMR, cArrayMR, obsMR);
+
+                    while (iters < maxIters) {
+                        oldLogProbMR = logProbMR;
+                        //System.out.println(logProb);
+                        cArrayAlpha = alphaForward(cArrayMR, aMR, bMR, piMR, obsMR);
+                        cArrayMR = cArrayAlpha.getKey();
+                        alphaMR = cArrayAlpha.getValue();
+
+                        betaMR = betaBackwards(cArrayMR, aMR, bMR, piMR, obsMR);
+
+                        gammaValues = gammaMerge(aMR, bMR, alphaMR, betaMR, piMR, obsMR);
+                        gammaMR = gammaValues.getKey();
+                        diGammaMR = gammaValues.getValue();
+
+                        improvedLambdas = reEstimateing(gammaMR, diGammaMR, aMR, bMR, alphaMR, betaMR, piMR, obsMR);
+                        piMR = improvedLambdas.getKey();
+                        improvedAAndB = improvedLambdas.getValue();
+                        aMR = improvedAAndB.getKey();
+                        bMR = improvedAAndB.getValue();
+                        logProbMR = logChange(logProbMR, cArrayMR, obsMR);
+
+
+                        iters = iters + 1;
+                        //System.out.println(logProb);
+                    }
+                }
+                System.err.println("A");
+                printMatrix(aMR);
+                System.err.println("B");
+                printMatrix(bMR);
+                System.err.println("pi");
+                printMatrix(piMR);
+            }
+
+
+
+        }
+
         timestep++;
+
+
+
+        // This line chooses not to shoot.
         return cDontShoot;
 
         // This line would predict that bird 0 will move right and shoot at it.
@@ -118,24 +280,22 @@ class Player {
 
 
     //TODO Denna kan needa en cArray!
-    public static List alphaForward(double[][] alphaTemp, double[][] alphaNollTemp, double[] cArrayTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
+    public static SimpleEntry alphaForward(double[] cArrayTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
         int N = aTemp.length;
         int T = obsTemp.length;
         int M = bTemp[0].length;
         c = 0;
 
+        double[][] alphaTemp = new double[N][T];
+
         for(int i = 0 ; i < N ;  i++){
-            alphaNollTemp[i][0] = piTemp[0][i]*bTemp[i][(int) obs[0]];
-            c = c + alphaNollTemp[i][0];
+            alphaTemp[i][0] = piTemp[0][i]*bTemp[i][(int) obsTemp[0]];
+            c = c + alphaTemp[i][0];
         }
         c = 1/c;
         cArrayTemp[0] = c;
         for(int i = 0 ; i < N ;  i++){
-            alphaNollTemp[i][0] = alphaNollTemp[i][0]*c;
-        }
-
-        for(int i = 0 ; i < N ; i++){
-            alphaTemp[i][0] = alphaNollTemp[i][0];
+            alphaTemp[i][0] = alphaTemp[i][0]*c;
         }
 
 
@@ -158,17 +318,17 @@ class Player {
             cArrayTemp[t] = c;
 
         }
-        List cArrayAndAlpha = new LinkedList();
-        cArrayAndAlpha.add(cArrayTemp);
-        cArrayAndAlpha.add(alphaTemp);
-        return cArrayAndAlpha;
+
+        return new SimpleEntry<double[], double[][]>(cArrayTemp, alphaTemp);
 
     }
 
-    public static double[][] betaBackwards(double[][] betaTemp, double[] cArrayTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
+    public static double[][] betaBackwards(double[] cArrayTemp, double[][] aTemp, double[][] bTemp, double[][] piTemp, double[] obsTemp) {
         int N = aTemp.length;
         int T = obsTemp.length;
         int M = bTemp[0].length;
+        double[][] betaTemp = new double[N][T];
+
         for (int i=0; i < N; i++){
             betaTemp[i][T-1] = c;
         }
@@ -189,9 +349,12 @@ class Player {
 
     //Den borde inte needa en denom eftersom den nollställs direkt
     //TODO borde cArray returnas? Nej?
-    public static List gammaMerge(double[][] gammaTemp, double[][][] diGammaTemp, double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
+    public static SimpleEntry gammaMerge(double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
         int N = aTemp.length;
         int T = obsTemp.length;
+
+        double[][] gammaTemp = new double[N][T];
+        double[][][] diGammaTemp = new double[N][N][T];
 
         double evalSum = 0;
         for(int i  = 0 ; i < N ; i++){
@@ -224,19 +387,19 @@ class Player {
         }
 
 
-        //Pair gammaAndDiGamma = new Pair(gammaTemp, diGammaTemp);
-        List gammaAndDiGamma = new LinkedList();
-        gammaAndDiGamma.add(gammaTemp);
-        gammaAndDiGamma.add(diGammaTemp);
-        return gammaAndDiGamma;
+        return new SimpleEntry<double[][], double[][][]>(gammaTemp, diGammaTemp);
 
     }
 
     //TODO Alla N kan behöva bli specifika N!
-    public static List reEstimateing(double[][] gammaTemp, double[][][] diGammaTemp, double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
+    public static SimpleEntry reEstimateing(double[][] gammaTemp, double[][][] diGammaTemp, double[][] aTemp, double[][] bTemp, double[][] alphaTemp, double[][] betaTemp, double[][] piTemp, double[] obsTemp) {
         int N = aTemp.length;
         int T = obsTemp.length;
         int M = bTemp[0].length;
+
+
+
+
         for (int i = 0; i < N ; i++) {
             piTemp[0][i] = gammaTemp[i][0];
         }
@@ -266,15 +429,11 @@ class Player {
                 bTemp[i][j] = numer/denom;
             }
         }
-
-        List reestimatedLambda = new LinkedList();
-        reestimatedLambda.add(aTemp);
-        reestimatedLambda.add(bTemp);
-        reestimatedLambda.add(piTemp);
-        return reestimatedLambda;
+        SimpleEntry<double[][], double[][]> aAndB= new SimpleEntry<double[][], double[][]>(aTemp, bTemp);
+        return new SimpleEntry<double[][], SimpleEntry<double[][], double[][]>>(piTemp, aAndB);
     }
     //TODO Vi needar cArray
-    public static double logChange(double logProbTemp, double[] cArrayTemp, double[][] obsTemp) {
+    public static double logChange(double logProbTemp, double[] cArrayTemp, double[] obsTemp) {
         int T = obsTemp.length;
         logProbTemp = 0;
         for (int t = 0 ; t < T ; t++){
@@ -303,7 +462,7 @@ class Player {
             for(int i = 0 ;  i < aTemp.length ; i++){
                 double[] list = new double[aTemp.length];
                 for(int j = 0 ; j < aTemp.length ; j++){
-                    list[j] = aTemp[j][i]*localDelta[j][t-1]*b[i][(int)obsTemp[t]];
+                    list[j] = aTemp[j][i]*localDelta[j][t-1]*bTemp[i][(int)obsTemp[t]];
                 }
                 localDelta[i][t] = findMaxVal(list);
                 localDeltaIDX[i][t] = findMaxIndex(list);
@@ -362,12 +521,12 @@ class Player {
 
     public static void printMatrix(double[][] m) {
 
-        System.out.println("printing matrix------------------------------------");
+        System.err.println("printing matrix------------------------------------");
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length; j++) {
-                System.out.print(m[i][j] + " ; ");
+                System.err.print(m[i][j] + " ; ");
             }
-            System.out.println();
+            System.err.println();
         }
     }
 
@@ -380,15 +539,6 @@ class Player {
         }
     }
 
-    public static void printAllGiven(){
-        System.out.println("A");
-        printMatrix(a);
-        System.out.println("B");
-        printMatrix(b);
-        System.out.println("pi");
-        printMatrix(pi);
-        System.out.println("obs");
-        printVector(obs);
-    }
+
 
 }
