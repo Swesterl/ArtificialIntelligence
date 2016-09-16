@@ -30,7 +30,7 @@
       <file leaf-file-name="hw1main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hw1main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
+            <state relative-caret-position="18">
               <caret line="298" column="28" selection-start-line="298" selection-start-column="28" selection-end-line="298" selection-end-column="28" />
               <folding>
                 <element signature="method#hmm1#0;class#hw1main#0" expanded="false" />
@@ -81,10 +81,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="x" value="296" />
+    <option name="y" value="184" />
+    <option name="width" value="1393" />
+    <option name="height" value="792" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -111,9 +111,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -148,6 +147,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,7 +444,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1855" height="1056" extended-state="7" />
+    <frame x="296" y="184" width="1393" height="792" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -458,7 +458,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16172507" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1615219" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -689,6 +689,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hw1main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#hmm1#0;class#hw1main#0" expanded="false" />
+            <element signature="method#hmm2#0;class#hw1main#0" expanded="false" />
+            <element signature="method#hmm3#0;class#hw1main#0" expanded="false" />
+            <element signature="method#hmm4old#0;class#hw1main#0" expanded="false" />
+            <element signature="method#readDataHMM1#0;class#hw1main#0" expanded="false" />
+            <element signature="method#readDataHMM2#0;class#hw1main#0" expanded="false" />
+            <element signature="method#readDataHMM3#0;class#hw1main#0" expanded="false" />
+            <element signature="method#readDataHMM4#0;class#hw1main#0" expanded="false" />
+            <element signature="method#readDataHMMC#0;class#hw1main#0" expanded="false" />
+            <element signature="method#createMockData#0;class#hw1main#0" expanded="false" />
+            <element signature="method#matrixMult#0;class#hw1main#0" expanded="false" />
+            <element signature="method#ElementWiseMatrixMult#0;class#hw1main#0" expanded="false" />
+            <element signature="method#findMaxVal#0;class#hw1main#0" expanded="false" />
+            <element signature="method#findMaxIndex#0;class#hw1main#0" expanded="false" />
+            <element signature="method#printVector#0;class#hw1main#0" expanded="false" />
+            <element signature="method#printMatrix#0;class#hw1main#0" expanded="false" />
+            <element signature="method#printMatrixForKattis#0;class#hw1main#0" expanded="false" />
+            <element signature="method#printAllGiven#0;class#hw1main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/io/PrintStream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -698,7 +725,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hw1main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
+        <state relative-caret-position="18">
           <caret line="298" column="28" selection-start-line="298" selection-start-column="28" selection-end-line="298" selection-end-column="28" />
           <folding>
             <element signature="method#hmm1#0;class#hw1main#0" expanded="false" />

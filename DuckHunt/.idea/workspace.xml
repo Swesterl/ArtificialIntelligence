@@ -34,34 +34,51 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-240">
-              <caret line="196" column="74" selection-start-line="196" selection-start-column="65" selection-end-line="196" selection-end-column="74" />
+            <state relative-caret-position="18">
+              <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
               <folding>
-                <element signature="method#Player#0;class#Player#0" expanded="false" />
                 <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
-                <element signature="e#7441#7512#0" expanded="false" />
+                <element signature="e#4185#4236#0" expanded="false" />
+                <element signature="e#9105#9176#0" expanded="false" />
+                <element signature="method#observationSequence#0;class#Player#0" expanded="false" />
                 <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
-                <element signature="method#guess#0;class#Player#0" expanded="false" />
+                <element signature="e#12529#12577#0" expanded="false" />
                 <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
                 <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
                 <element signature="method#reveal#0;class#Player#0" expanded="false" />
-                <element signature="method#alphaForward#0;class#Player#0" expanded="false" />
-                <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
-                <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
-                <element signature="method#logChange#0;class#Player#0" expanded="false" />
-                <element signature="method#viterbi#0;class#Player#0" expanded="false" />
-                <element signature="e#15639#15688#0" expanded="false" />
-                <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
-                <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
-                <element signature="method#printVector#0;class#Player#0" expanded="false" />
-                <element signature="method#printMatrix#0;class#Player#0" expanded="false" />
-                <element signature="method#printMatrixForKattis#0;class#Player#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HMM.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HMM.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8928">
+              <caret line="503" column="42" selection-start-line="503" selection-start-column="39" selection-end-line="503" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#9774#9775#0" expanded="true" />
+                <element signature="e#9800#9801#0" expanded="true" />
+                <element signature="e#26926#26927#0" expanded="true" />
+                <element signature="e#26950#26951#0" expanded="true" />
+                <element signature="e#26984#26985#0" expanded="true" />
+                <element signature="e#27008#27009#0" expanded="true" />
+                <element signature="e#27043#27044#0" expanded="true" />
+                <element signature="e#27068#27069#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -72,13 +89,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/GameServer.java" />
+        <option value="$PROJECT_DIR$/src/HMM.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1855" />
-    <option name="y" value="24" />
+    <option name="x" value="65" />
+    <option name="y" value="1104" />
     <option name="width" value="1855" />
     <option name="height" value="1056" />
   </component>
@@ -108,7 +126,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -143,6 +160,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -432,21 +450,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1855" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="1104" width="1855" height="1056" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.092573754" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26497462" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959569" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -474,25 +492,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>286</line>
-          <properties />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>493</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Player.java</url>
-          <line>291</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
@@ -502,6 +501,102 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1818">
+          <caret line="101" column="29" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
+            <element signature="e#4185#4236#0" expanded="false" />
+            <element signature="e#9105#9176#0" expanded="false" />
+            <element signature="method#observationSequence#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
+            <element signature="e#12529#12577#0" expanded="false" />
+            <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
+            <element signature="method#reveal#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HMM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9054">
+          <caret line="503" column="42" selection-start-line="503" selection-start-column="39" selection-end-line="503" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9774#9775#0" expanded="true" />
+            <element signature="e#9800#9801#0" expanded="true" />
+            <element signature="e#26926#26927#0" expanded="true" />
+            <element signature="e#26950#26951#0" expanded="true" />
+            <element signature="e#26984#26985#0" expanded="true" />
+            <element signature="e#27008#27009#0" expanded="true" />
+            <element signature="e#27043#27044#0" expanded="true" />
+            <element signature="e#27068#27069#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1818">
+          <caret line="101" column="29" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
+            <element signature="e#4185#4236#0" expanded="false" />
+            <element signature="e#9105#9176#0" expanded="false" />
+            <element signature="method#observationSequence#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
+            <element signature="e#12529#12577#0" expanded="false" />
+            <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
+            <element signature="method#reveal#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="101" column="29" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
+            <element signature="e#4185#4236#0" expanded="false" />
+            <element signature="e#9105#9176#0" expanded="false" />
+            <element signature="method#observationSequence#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
+            <element signature="e#12529#12577#0" expanded="false" />
+            <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
+            <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
+            <element signature="method#reveal#0;class#Player#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -515,25 +610,15 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#Player#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
-            <element signature="e#7441#7512#0" expanded="false" />
+            <element signature="e#4185#4236#0" expanded="false" />
+            <element signature="e#9105#9176#0" expanded="false" />
+            <element signature="method#observationSequence#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
-            <element signature="method#guess#0;class#Player#0" expanded="false" />
+            <element signature="e#12529#12577#0" expanded="false" />
             <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
             <element signature="method#reveal#0;class#Player#0" expanded="false" />
-            <element signature="method#alphaForward#0;class#Player#0" expanded="false" />
-            <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
-            <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
-            <element signature="method#logChange#0;class#Player#0" expanded="false" />
-            <element signature="method#viterbi#0;class#Player#0" expanded="false" />
-            <element signature="e#15639#15688#0" expanded="false" />
-            <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
-            <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
-            <element signature="method#printVector#0;class#Player#0" expanded="false" />
-            <element signature="method#printMatrix#0;class#Player#0" expanded="false" />
-            <element signature="method#printMatrixForKattis#0;class#Player#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -558,7 +643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -582,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -626,30 +709,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/HMM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8928">
+          <caret line="503" column="42" selection-start-line="503" selection-start-column="39" selection-end-line="503" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9774#9775#0" expanded="true" />
+            <element signature="e#9800#9801#0" expanded="true" />
+            <element signature="e#26926#26927#0" expanded="true" />
+            <element signature="e#26950#26951#0" expanded="true" />
+            <element signature="e#26984#26985#0" expanded="true" />
+            <element signature="e#27008#27009#0" expanded="true" />
+            <element signature="e#27043#27044#0" expanded="true" />
+            <element signature="e#27068#27069#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="196" column="74" selection-start-line="196" selection-start-column="65" selection-end-line="196" selection-end-column="74" />
+        <state relative-caret-position="18">
+          <caret line="63" column="37" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
           <folding>
-            <element signature="method#Player#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#shoot#0;class#Player#0" expanded="false" />
-            <element signature="e#7441#7512#0" expanded="false" />
+            <element signature="e#4185#4236#0" expanded="false" />
+            <element signature="e#9105#9176#0" expanded="false" />
+            <element signature="method#observationSequence#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#guess#0;class#Player#0" expanded="false" />
-            <element signature="method#guess#0;class#Player#0" expanded="false" />
+            <element signature="e#12529#12577#0" expanded="false" />
             <element signature="docComment;method#hit#0;class#Player#0" expanded="false" />
             <element signature="docComment;method#reveal#0;class#Player#0" expanded="false" />
             <element signature="method#reveal#0;class#Player#0" expanded="false" />
-            <element signature="method#alphaForward#0;class#Player#0" expanded="false" />
-            <element signature="method#betaBackwards#0;class#Player#0" expanded="false" />
-            <element signature="method#gammaMerge#0;class#Player#0" expanded="false" />
-            <element signature="method#logChange#0;class#Player#0" expanded="false" />
-            <element signature="method#viterbi#0;class#Player#0" expanded="false" />
-            <element signature="e#15639#15688#0" expanded="false" />
-            <element signature="method#findMaxVal#0;class#Player#0" expanded="false" />
-            <element signature="method#findMaxIndex#0;class#Player#0" expanded="false" />
-            <element signature="method#printVector#0;class#Player#0" expanded="false" />
-            <element signature="method#printMatrix#0;class#Player#0" expanded="false" />
-            <element signature="method#printMatrixForKattis#0;class#Player#0" expanded="false" />
           </folding>
         </state>
       </provider>
