@@ -24,14 +24,23 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4562">
+            <state relative-caret-position="414">
               <caret line="805" column="1" selection-start-line="805" selection-start-column="1" selection-end-line="805" selection-end-column="1" />
               <folding>
-                <element signature="e#478#489#0" expanded="true" />
-                <element signature="e#5112#5123#0" expanded="true" />
-                <element signature="e#5569#5580#0" expanded="true" />
-                <element signature="e#6958#6969#0" expanded="true" />
-                <element signature="e#7462#7473#0" expanded="true" />
+                <element signature="docComment;field#maxDepth#0;class#Player#0" expanded="false" />
+                <element signature="method#play#0;class#Player#0" expanded="false" />
+                <element signature="method#minimax#0;class#Player#0" expanded="false" />
+                <element signature="method#alphaBeta#0;class#Player#0" expanded="false" />
+                <element signature="method#eval#0;class#Player#0" expanded="false" />
+                <element signature="e#8202#8241#0" expanded="false" />
+                <element signature="method#eval2#0;class#Player#0" expanded="false" />
+                <element signature="e#12008#12047#0" expanded="false" />
+                <element signature="e#14920#14974#0" expanded="false" />
+                <element signature="method#eval3#0;class#Player#0" expanded="false" />
+                <element signature="e#15571#15610#0" expanded="false" />
+                <element signature="method#eval4#0;class#Player#0" expanded="false" />
+                <element signature="e#18049#18088#0" expanded="false" />
+                <element signature="e#22771#22825#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -50,7 +59,7 @@
       <file leaf-file-name="Move.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Move.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2376">
+            <state relative-caret-position="108">
               <caret line="8" column="54" selection-start-line="7" selection-start-column="7" selection-end-line="8" selection-end-column="54" />
               <folding>
                 <element signature="e#4476#4477#0" expanded="true" />
@@ -63,7 +72,7 @@
       <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="954">
               <caret line="197" column="17" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="17" />
               <folding>
                 <element signature="docComment;class#GameState#0" expanded="false" />
@@ -164,8 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,7 +207,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -209,6 +218,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ccheckers" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -482,6 +492,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="11cc7364-b8e1-4bc1-94a2-af9e0dba1e8a" name="Default" comment="" />
@@ -494,7 +507,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -507,7 +520,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12884097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12884097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -555,11 +568,212 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#478#489#0" expanded="true" />
-            <element signature="e#5112#5123#0" expanded="true" />
-            <element signature="e#5569#5580#0" expanded="true" />
-            <element signature="e#6958#6969#0" expanded="true" />
-            <element signature="e#7462#7473#0" expanded="true" />
+            <element signature="docComment;field#maxDepth#0;class#Player#0" expanded="false" />
+            <element signature="method#play#0;class#Player#0" expanded="false" />
+            <element signature="method#minimax#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaBeta#0;class#Player#0" expanded="false" />
+            <element signature="method#eval#0;class#Player#0" expanded="false" />
+            <element signature="e#8202#8241#0" expanded="false" />
+            <element signature="method#eval2#0;class#Player#0" expanded="false" />
+            <element signature="e#12008#12047#0" expanded="false" />
+            <element signature="e#14920#14974#0" expanded="false" />
+            <element signature="method#eval3#0;class#Player#0" expanded="false" />
+            <element signature="e#15571#15610#0" expanded="false" />
+            <element signature="method#eval4#0;class#Player#0" expanded="false" />
+            <element signature="e#18049#18088#0" expanded="false" />
+            <element signature="e#22771#22825#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="54" selection-start-line="7" selection-start-column="7" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="e#4476#4477#0" expanded="true" />
+            <element signature="e#4516#4517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="197" column="17" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#GameState#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#GameState#1;class#GameState#0" expanded="false" />
+            <element signature="method#GameState#1;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#GameState#2;class#GameState#0" expanded="false" />
+            <element signature="method#GameState#2;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isEOG#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isXWin#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isOWin#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#cellToRow#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#cellToCol#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#rowColumnToCell#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#at#0;class#GameState#0" expanded="false" />
+            <element signature="method#at#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#at#1;class#GameState#0" expanded="false" />
+            <element signature="method#at#1;class#GameState#0" expanded="false" />
+            <element signature="method#set#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#getMove#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#getNextPlayer#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#checkLines#0;class#GameState#0" expanded="false" />
+            <element signature="method#checkLines#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#checkLine#0;class#GameState#0" expanded="false" />
+            <element signature="method#checkLine#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isSpecialMove#0;class#GameState#0" expanded="false" />
+            <element signature="method#isSpecialMove#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#tryMove#0;class#GameState#0" expanded="false" />
+            <element signature="method#tryMove#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#findPossibleMoves#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isEqual#0;class#GameState#0" expanded="false" />
+            <element signature="method#isEqual#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#GameState#0" expanded="false" />
+            <element signature="e#12327#12425#0" expanded="false" />
+            <element signature="docComment;method#toMessage#0;class#GameState#0" expanded="false" />
+            <element signature="method#toMessage#0;class#GameState#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14490">
+          <caret line="805" column="1" selection-start-line="805" selection-start-column="1" selection-end-line="805" selection-end-column="1" />
+          <folding>
+            <element signature="docComment;field#maxDepth#0;class#Player#0" expanded="false" />
+            <element signature="method#play#0;class#Player#0" expanded="false" />
+            <element signature="method#minimax#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaBeta#0;class#Player#0" expanded="false" />
+            <element signature="method#eval#0;class#Player#0" expanded="false" />
+            <element signature="e#8202#8241#0" expanded="false" />
+            <element signature="method#eval2#0;class#Player#0" expanded="false" />
+            <element signature="e#12008#12047#0" expanded="false" />
+            <element signature="e#14920#14974#0" expanded="false" />
+            <element signature="method#eval3#0;class#Player#0" expanded="false" />
+            <element signature="e#15571#15610#0" expanded="false" />
+            <element signature="method#eval4#0;class#Player#0" expanded="false" />
+            <element signature="e#18049#18088#0" expanded="false" />
+            <element signature="e#22771#22825#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="54" selection-start-line="7" selection-start-column="7" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="e#4476#4477#0" expanded="true" />
+            <element signature="e#4516#4517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3546">
+          <caret line="197" column="17" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#GameState#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#GameState#1;class#GameState#0" expanded="false" />
+            <element signature="method#GameState#1;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#GameState#2;class#GameState#0" expanded="false" />
+            <element signature="method#GameState#2;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isEOG#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isXWin#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isOWin#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#cellToRow#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#cellToCol#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#rowColumnToCell#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#at#0;class#GameState#0" expanded="false" />
+            <element signature="method#at#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#at#1;class#GameState#0" expanded="false" />
+            <element signature="method#at#1;class#GameState#0" expanded="false" />
+            <element signature="method#set#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#getMove#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#getNextPlayer#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#checkLines#0;class#GameState#0" expanded="false" />
+            <element signature="method#checkLines#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#checkLine#0;class#GameState#0" expanded="false" />
+            <element signature="method#checkLine#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isSpecialMove#0;class#GameState#0" expanded="false" />
+            <element signature="method#isSpecialMove#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#tryMove#0;class#GameState#0" expanded="false" />
+            <element signature="method#tryMove#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#findPossibleMoves#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#isEqual#0;class#GameState#0" expanded="false" />
+            <element signature="method#isEqual#0;class#GameState#0" expanded="false" />
+            <element signature="docComment;method#toString#0;class#GameState#0" expanded="false" />
+            <element signature="e#12327#12425#0" expanded="false" />
+            <element signature="docComment;method#toMessage#0;class#GameState#0" expanded="false" />
+            <element signature="method#toMessage#0;class#GameState#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;field#maxDepth#0;class#Player#0" expanded="false" />
+            <element signature="method#play#0;class#Player#0" expanded="false" />
+            <element signature="method#minimax#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaBeta#0;class#Player#0" expanded="false" />
+            <element signature="method#eval#0;class#Player#0" expanded="false" />
+            <element signature="e#8202#8241#0" expanded="false" />
+            <element signature="method#eval2#0;class#Player#0" expanded="false" />
+            <element signature="e#12008#12047#0" expanded="false" />
+            <element signature="e#14920#14974#0" expanded="false" />
+            <element signature="method#eval3#0;class#Player#0" expanded="false" />
+            <element signature="e#15571#15610#0" expanded="false" />
+            <element signature="method#eval4#0;class#Player#0" expanded="false" />
+            <element signature="e#18049#18088#0" expanded="false" />
+            <element signature="e#22771#22825#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -642,11 +856,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#478#489#0" expanded="true" />
-            <element signature="e#5112#5123#0" expanded="true" />
-            <element signature="e#5569#5580#0" expanded="true" />
-            <element signature="e#6958#6969#0" expanded="true" />
-            <element signature="e#7462#7473#0" expanded="true" />
+            <element signature="docComment;field#maxDepth#0;class#Player#0" expanded="false" />
+            <element signature="method#play#0;class#Player#0" expanded="false" />
+            <element signature="method#minimax#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaBeta#0;class#Player#0" expanded="false" />
+            <element signature="method#eval#0;class#Player#0" expanded="false" />
+            <element signature="e#8202#8241#0" expanded="false" />
+            <element signature="method#eval2#0;class#Player#0" expanded="false" />
+            <element signature="e#12008#12047#0" expanded="false" />
+            <element signature="e#14920#14974#0" expanded="false" />
+            <element signature="method#eval3#0;class#Player#0" expanded="false" />
+            <element signature="e#15571#15610#0" expanded="false" />
+            <element signature="method#eval4#0;class#Player#0" expanded="false" />
+            <element signature="e#18049#18088#0" expanded="false" />
+            <element signature="e#22771#22825#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -729,11 +952,20 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#478#489#0" expanded="true" />
-            <element signature="e#5112#5123#0" expanded="true" />
-            <element signature="e#5569#5580#0" expanded="true" />
-            <element signature="e#6958#6969#0" expanded="true" />
-            <element signature="e#7462#7473#0" expanded="true" />
+            <element signature="docComment;field#maxDepth#0;class#Player#0" expanded="false" />
+            <element signature="method#play#0;class#Player#0" expanded="false" />
+            <element signature="method#minimax#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaBeta#0;class#Player#0" expanded="false" />
+            <element signature="method#eval#0;class#Player#0" expanded="false" />
+            <element signature="e#8202#8241#0" expanded="false" />
+            <element signature="method#eval2#0;class#Player#0" expanded="false" />
+            <element signature="e#12008#12047#0" expanded="false" />
+            <element signature="e#14920#14974#0" expanded="false" />
+            <element signature="method#eval3#0;class#Player#0" expanded="false" />
+            <element signature="e#15571#15610#0" expanded="false" />
+            <element signature="method#eval4#0;class#Player#0" expanded="false" />
+            <element signature="e#18049#18088#0" expanded="false" />
+            <element signature="e#22771#22825#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -792,24 +1024,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="414">
+          <caret line="805" column="1" selection-start-line="805" selection-start-column="1" selection-end-line="805" selection-end-column="1" />
           <folding>
-            <element signature="docComment;class#Main#0" expanded="false" />
-            <element signature="method#main#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2376">
-          <caret line="8" column="54" selection-start-line="7" selection-start-column="7" selection-end-line="8" selection-end-column="54" />
-          <folding>
-            <element signature="e#4476#4477#0" expanded="true" />
-            <element signature="e#4516#4517#0" expanded="true" />
+            <element signature="docComment;field#maxDepth#0;class#Player#0" expanded="false" />
+            <element signature="method#play#0;class#Player#0" expanded="false" />
+            <element signature="method#minimax#0;class#Player#0" expanded="false" />
+            <element signature="method#alphaBeta#0;class#Player#0" expanded="false" />
+            <element signature="method#eval#0;class#Player#0" expanded="false" />
+            <element signature="e#8202#8241#0" expanded="false" />
+            <element signature="method#eval2#0;class#Player#0" expanded="false" />
+            <element signature="e#12008#12047#0" expanded="false" />
+            <element signature="e#14920#14974#0" expanded="false" />
+            <element signature="method#eval3#0;class#Player#0" expanded="false" />
+            <element signature="e#15571#15610#0" expanded="false" />
+            <element signature="method#eval4#0;class#Player#0" expanded="false" />
+            <element signature="e#18049#18088#0" expanded="false" />
+            <element signature="e#22771#22825#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -822,9 +1055,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="8" column="54" selection-start-line="7" selection-start-column="7" selection-end-line="8" selection-end-column="54" />
+          <folding>
+            <element signature="e#4476#4477#0" expanded="true" />
+            <element signature="e#4516#4517#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
+        <state relative-caret-position="954">
           <caret line="197" column="17" selection-start-line="197" selection-start-column="11" selection-end-line="197" selection-end-column="17" />
           <folding>
             <element signature="docComment;class#GameState#0" expanded="false" />
@@ -865,16 +1109,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Player.java">
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4562">
-          <caret line="805" column="1" selection-start-line="805" selection-start-column="1" selection-end-line="805" selection-end-column="1" />
+        <state relative-caret-position="54">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding>
-            <element signature="e#478#489#0" expanded="true" />
-            <element signature="e#5112#5123#0" expanded="true" />
-            <element signature="e#5569#5580#0" expanded="true" />
-            <element signature="e#6958#6969#0" expanded="true" />
-            <element signature="e#7462#7473#0" expanded="true" />
+            <element signature="docComment;class#Main#0" expanded="false" />
+            <element signature="method#main#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
